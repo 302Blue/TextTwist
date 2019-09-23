@@ -9,7 +9,7 @@ $(document).ready(function () {
     getScore();
     wordsLeft();
     document.querySelector('#wordsleft').innerText = notFound.length - found.length;
-    document.getElementById("input").focus();
+    document.getElementById("#input").focus();
     document.addEventListener("keyup", checkAns());
 });
 
