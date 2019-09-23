@@ -73,10 +73,12 @@ function getRack() {
 
 function getScore() {
     let score;
-    if (localStorage.getItem('twistScore') == null) {
+    let localScore = localStorage.getItem('twistScore');
+    //For is score is stored locally
+    if (localScore == null) {
         score = 0;
     } else {
-        localStorage.setItem('twistScore', score);
+        score = localScore;
     }
     //Score by the length of the found word
     found.forEach(function (el) {
@@ -84,6 +86,8 @@ function getScore() {
     });
     //Set score in html
     document.getElementById("score").innerText = score;
+    //Update local score
+    localStorage.setItem('twistScore', score);
 }
 
 function wordsLeft() {
