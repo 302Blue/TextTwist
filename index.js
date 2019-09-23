@@ -1,17 +1,17 @@
 var found = [];
 var notFound = [];
     
-$(document).ready(function () {
+$(document).ready(async function () {
     //Small animation
-    $("#title").animate({ marginTop: "40px" }, 1500).
+   await $("#title").animate({ marginTop: "40px" }, 1500).
         animate({ marginBottom: "40px" }, 800);
     //Get rack, score, and words left
-    getRack();
-    getScore();
-    wordsLeft();
+   await getRack();
+    await getScore();
+   await  wordsLeft();
     //Focus input box and setup keylistener
-    document.getElementById("input").focus();
-    document.addEventListener("keyup", checkAns);
+   await  document.getElementById("input").focus();
+    await document.addEventListener("keyup", checkAns);
 });
 
 function checkAns() {
