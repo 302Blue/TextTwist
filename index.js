@@ -4,13 +4,13 @@ var notFound = [];
 $(document).ready(function () {
     $("#title").animate({ marginTop: "40px" }, 1500).
         animate({ marginBottom: "40px" }, 800);
-
     getRack();
-    getScore();
-    wordsLeft();
+    
     document.getElementById("input").focus();
     document.addEventListener("keyup", checkAns);
     document.getElementById("wordsleft").innerText = notFound.length - found.length;
+    getScore();
+    wordsLeft();
 });
 
 function checkAns() {
