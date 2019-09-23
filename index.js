@@ -77,7 +77,7 @@ function getLocal() {
     let localScore = localStorage.getItem('twistScore');
     //Set local score if it exists
     if (localScore != null) {
-        score += parseInt(localScore);
+        score += parseInt(localScore, 10);
     }    
 }
 
