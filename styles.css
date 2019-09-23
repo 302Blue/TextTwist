@@ -17,6 +17,7 @@ body {
 }
 
 #rack {
+    text-align: justify;
     height: 2vh;
     width: 12vw;
     resize: none;
@@ -35,7 +36,8 @@ body {
 }
 
 #wordsleft {
-    height: 15vh;
+    text-align: justify;
+    height: 2vh;
     width: 25vw;
     resize: none;
     overflow-y: scroll;
