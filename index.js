@@ -6,28 +6,27 @@ $(document).ready(function () {
         animate({ marginBottom: "40px" }, 800);
 
     getRack();
+    getScore();
+    wordsLeft();
+    document.querySelector('#wordsleft').innerText = notFound.length - found.length;
     document.getElementById("input").focus();
+    document.addEventListener("keyup", checkAns());
+});
 
-    document.addEventListener("keyup", function () {
-        var input = document.querySelector('#input').value.toUpperCase();
+function checkAns() {
+    var input = document.querySelector('#input').value.toUpperCase();
         if (notFound.includes(input) && !(found.includes(input))) {
             document.querySelector('#wordsfound').append(input + ' ');
-            found.push(input);
+            document.querySelector('#wordsleft').innerText = notFound.length - found.length;
             document.querySelector('#input').value = "";
-        }
+            found.push(input);
+        } 
         else if (input.length > 8) {
             document.querySelector('#input').value = "";
         }
-        document.querySelector('#wordsleft').innerText = notFound.length - found.length;
-        document.querySelector('#wordlengths').innerText = '';
-        notFound.forEach(function (el) {
-            if (!found.includes(el)) {
-                document.querySelector('#wordlengths').innerText += el.length + ' ';
-            }
-        })
-    });
-
-});
+        getScore();
+        wordsLeft();
+}
 
 function getRack() {
     $.ajax({
@@ -56,3 +55,50 @@ function getRack() {
     })
 }
 
+function getScore() {
+    let score = 0;
+    found.forEach(function (el) {
+        if (found.includes(el)) {
+            score =+ el.length;
+        }
+    });
+    document.querySelector('#score').innerText = score;
+}
+
+function wordsLeft(el) {
+    let letter2 = 0;
+    let letter3 = 0;
+    let letter4 = 0;
+    let letter5 = 0;
+    let letter6 = 0;
+    let letter7 = 0;
+    let letter8 = 0;
+    notFound.forEach(function (el) {
+        if (!(found.includes(el))) {
+            switch (el.length) {
+                case 2:
+                    var letter2 =+ 1;
+                case 3:
+                    var letter3 =+ 1;
+                case 4:
+                    var letter4 =+ 1;
+                case 5:
+                    var letter5 =+ 1;
+                case 6:
+                    var letter6 =+ 1;
+                case 7:
+                    var letter7 =+ 1;
+                case 8:
+                    var letter8 =+ 1;
+            }
+        }
+    });
+
+    document.querySelector('#2wordlength').innerText = letter2;
+    document.querySelector('#3wordlength').innerText = letter3;
+    document.querySelector('#4wordlength').innerText = letter4;
+    document.querySelector('#5wordlength').innerText = letter5;
+    document.querySelector('#6wordlength').innerText = letter6;
+    document.querySelector('#7wordlength').innerText = letter7;
+    document.querySelector('#8wordlength').innerText = letter8;
+}
