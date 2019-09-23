@@ -74,14 +74,14 @@ function getRack() {
 function getScore() {
     let score = 0;
     let localScore = localStorage.getItem('twistScore');
-    //For if score is stored locally
-    if (localScore != null) {
-        score = localScore;
-    }
     //Score by the length of the found word
     found.forEach(function (el) {
         score += el.length;
     });
+    //Add-on local score if it exists
+    if (localScore != null) {
+        score += localScore;
+    }
     //Update local score
     localStorage.setItem('twistScore', score);
     //Set score in html
