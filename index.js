@@ -94,11 +94,11 @@ function wordsLeft(el) {
         }
     });
 
-    document.querySelector('#2wordlength').innerText = letter2;
-    document.querySelector('#3wordlength').innerText = letter3;
-    document.querySelector('#4wordlength').innerText = letter4;
-    document.querySelector('#5wordlength').innerText = letter5;
-    document.querySelector('#6wordlength').innerText = letter6;
-    document.querySelector('#7wordlength').innerText = letter7;
-    document.querySelector('#8wordlength').innerText = letter8;
+    document.querySelector('#wordlengths').rows[1].cells[1].innerHTML = letter2;
+    document.querySelector('#wordlengths').rows[1].cells[2].innerHTML = letter3;
+    document.querySelector('#wordlengths').rows[1].cells[3].innerHTML = letter4;
+    document.querySelector('#wordlengths').rows[1].cells[4].innerHTML = letter5;
+    document.querySelector('#wordlengths').rows[1].cells[5].innerHTML = letter6;
+    document.querySelector('#wordlengths').rows[1].cells[6].innerHTML = letter7;
+    document.querySelector('#wordlengths').rows[1].cells[7].innerHTML = letter8;
 }
