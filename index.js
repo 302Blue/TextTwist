@@ -93,7 +93,6 @@ function wordsLeft(el) {
             }
         }
     });
-
     document.querySelector('#wordlengths').rows[1].cells[1].innerHTML = letter2;
     document.querySelector('#wordlengths').rows[1].cells[2].innerHTML = letter3;
     document.querySelector('#wordlengths').rows[1].cells[3].innerHTML = letter4;
