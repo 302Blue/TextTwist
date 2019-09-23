@@ -104,7 +104,7 @@ function wordsLeft() {
         }
     });
     //Set number of words left and set their lengths in html
-    document.getElementById("wordsleft").innerText = notFound.length;
+    document.querySelector("wordsleft").innerText = notFound.length;
     document.getElementById("wordlengths").rows[1].cells[0].innerHTML = letter2;
     document.getElementById("wordlengths").rows[1].cells[1].innerHTML = letter3;
     document.getElementById("wordlengths").rows[1].cells[2].innerHTML = letter4;
