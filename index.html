@@ -11,41 +11,47 @@
 <body>
     <div id="title">TextTwist</div>
 
-    <h1>Your Rack:</h1>
-    <textarea readonly id="rack"></textarea>
-
-    <h1>Your Guess:</h1>
-    <div id="submissionarea">
+    <div id="rack">
+        <h1>Your Rack:</h1>
+        <textarea readonly></textarea>
+    </div>
+    
+    <div id=submissionarea>
+        <h1>Your Guess:</h1>
         <input type="text" id="input">
     </div>
 
-    <br>
-    <h3>Words Found:</h3>
-    <textarea readonly id="wordsfound"></textarea>
+    <div id="wordsfound">
+        <h3>Words Found:</h3>
+        <textarea readonly></textarea>
+    </div>
 
-    <h3>Words Left:</h3>
-    <textarea readonly id="wordsleft"></textarea>
+    <div id="wordsleft">
+        <h3>Words Left:</h3>
+        <textarea readonly></textarea>
+    </div>
 
-    <br>
-    </br>
-    <table id="wordlengths">Size of Words Left:
-        <tr>
-            <th>2-Letters</th>
-            <th>3-Letters</th>
-            <th>4-Letters</th>
-            <th>5-Letters</th>
-            <th>6-Letters</th>
-            <th>7-Letters</th>
-            <th>8-Letters</th>
-        </tr>
-        <tr>
-            <th id=2wordlength>--</th>
-            <th id=3wordlength>---</th>
-            <th id=4wordlength>----</th>
-            <th id=5wordlength>-----</th>
-            <th id=6wordlength>------</th>
-            <th id=7wordlength>-------</th>
-            <th id=8wordlength>--------</th>
-        </tr>
-    </table>
+    <div id="wordlengths">
+        <table>Size of Words Left:
+            <tr>
+                <th>2-Letters</th>
+                <th>3-Letters</th>
+                <th>4-Letters</th>
+                <th>5-Letters</th>
+                <th>6-Letters</th>
+                <th>7-Letters</th>
+                <th>8-Letters</th>
+            </tr>
+            <tr>
+                <th id=2wordlength>--</th>
+                <th id=3wordlength>---</th>
+                <th id=4wordlength>----</th>
+                <th id=5wordlength>-----</th>
+                <th id=6wordlength>------</th>
+                <th id=7wordlength>-------</th>
+                <th id=8wordlength>--------</th>
+            </tr>
+        </table>
+    </div>
+
 </body>
