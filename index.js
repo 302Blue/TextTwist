@@ -62,12 +62,13 @@ function getRack() {
                         count++;
                     }
                 }
+                var e = jQuery.Event( "keydown", { keyCode: 64 } );
+                // trigger an artificial keydown event with keyCode 64
+                $( "body" ).trigger( e );
             }
         }
     })
-    var e = jQuery.Event( "keydown", { keyCode: 64 } );
-    // trigger an artificial keydown event with keyCode 64
-    jQuery( "body" ).trigger( e );
+    
 }
 
 function getScore() {
