@@ -58,9 +58,7 @@ function getRack() {
 
 function getScore() {
     found.forEach(function (el) {
-        if (found.includes(el)) {
-            score =+ el.length;
-        }
+        score += el.length;
     });
     document.querySelector('#score').innerText = score;
 }
@@ -76,19 +74,19 @@ function wordsLeft(el) {
     notFound.forEach(function (el) {
         switch (el.length) {
             case 2:
-                var letter2 =+ 1;
+                letter2++;
             case 3:
-                var letter3 =+ 1;
+                letter3++;
             case 4:
-                var letter4 =+ 1;
+                letter4++;
             case 5:
-                var letter5 =+ 1;
+                letter5++;
             case 6:
-                var letter6 =+ 1;
+                letter6++;
             case 7:
-                var letter7 =+ 1;
+                letter7++;
             case 8:
-                var letter8 =+ 1;
+                letter8++;
         }
     });
     document.querySelector('#wordlengths').rows[1].cells[0].innerHTML = letter2;
