@@ -31,7 +31,7 @@ $(document).ready(function () {
 
 function getRack() {
     $.ajax({
-        url: "db/api.php",
+        url: "./db/api.php",
         contentType: "application/json",
         type: "GET",
         statusCode: {
