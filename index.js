@@ -5,23 +5,24 @@ $(document).ready(function () {
     $("#title").animate({ marginTop: "40px" }, 1500).
         animate({ marginBottom: "40px" }, 800);
     getRack();
-
+    getScore();
+    wordsLeft();
     document.getElementById("input").focus();
     document.addEventListener("keyup", checkAns);
 });
 
 function checkAns() {
     var input = document.getElementById("input").value.toUpperCase();
-        if (notFound.includes(input) && !(found.includes(input))) {
-            found.push(input);
-            document.getElementById("input").value = "";
-            document.getElementById("wordsfound").append(input + ' ');
-        } 
-        else if (input.length > 8) {
-            document.getElementById("input").value = "";
-        }
-        getScore();
-        wordsLeft();
+    if (notFound.includes(input) && !(found.includes(input))) {
+        found.push(input);
+        document.getElementById("input").value = "";
+        document.getElementById("wordsfound").append(input + ' ');
+    } 
+    else if (input.length > 8) {
+        document.getElementById("input").value = "";
+    }
+    getScore();
+    wordsLeft();
 }
 
 function getRack() {
@@ -49,9 +50,6 @@ function getRack() {
             }
         }
     })
-    console.log(notFound);
-    getScore();
-    wordsLeft();
 }
 
 function getScore() {
@@ -63,7 +61,6 @@ function getScore() {
 }
 
 function wordsLeft() {
-    console.log(notFound);
     let letter2 = 0;
     let letter3 = 0;
     let letter4 = 0;
@@ -87,8 +84,10 @@ function wordsLeft() {
         } else if (el.length == 8) {
             letter8++;
         }
+        console.log(el.length);
     });
     document.getElementById("wordsleft").innerText = notFound.length - found.length;
+    console.log(notFound.length - found.length);
     document.getElementById("wordlengths").rows[1].cells[0].innerHTML = letter2;
     document.getElementById("wordlengths").rows[1].cells[1].innerHTML = letter3;
     document.getElementById("wordlengths").rows[1].cells[2].innerHTML = letter4;
