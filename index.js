@@ -79,7 +79,9 @@ function getLocal() {
     //Set local score if it exists
     if (localScore != null) {
         score += parseInt(localScore, 10);
-    }    
+    } else {
+        score = 0;
+    }
 }
 
 function updateScore() {
