@@ -1,5 +1,6 @@
 var found = [];
 var notFound = [];
+var score = 0;
 
 $(document).ready(function () {
     $("#title").animate({ marginTop: "40px" }, 1500).
@@ -56,7 +57,6 @@ function getRack() {
 }
 
 function getScore() {
-    let score = 0;
     found.forEach(function (el) {
         if (found.includes(el)) {
             score =+ el.length;
@@ -74,23 +74,21 @@ function wordsLeft(el) {
     let letter7 = 0;
     let letter8 = 0;
     notFound.forEach(function (el) {
-        if (!(found.includes(el))) {
-            switch (el.length) {
-                case 2:
-                    var letter2 =+ 1;
-                case 3:
-                    var letter3 =+ 1;
-                case 4:
-                    var letter4 =+ 1;
-                case 5:
-                    var letter5 =+ 1;
-                case 6:
-                    var letter6 =+ 1;
-                case 7:
-                    var letter7 =+ 1;
-                case 8:
-                    var letter8 =+ 1;
-            }
+        switch (el.length) {
+            case 2:
+                var letter2 =+ 1;
+            case 3:
+                var letter3 =+ 1;
+            case 4:
+                var letter4 =+ 1;
+            case 5:
+                var letter5 =+ 1;
+            case 6:
+                var letter6 =+ 1;
+            case 7:
+                var letter7 =+ 1;
+            case 8:
+                var letter8 =+ 1;
         }
     });
     document.querySelector('#wordlengths').rows[1].cells[0].innerHTML = letter2;
