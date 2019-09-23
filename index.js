@@ -71,21 +71,20 @@ function wordsLeft(el) {
     let letter7 = 0;
     let letter8 = 0;
     notFound.forEach(function (el) {
-        switch (el.length) {
-            case 2:
-                letter2++;
-            case 3:
-                letter3++;
-            case 4:
-                letter4++;
-            case 5:
-                letter5++;
-            case 6:
-                letter6++;
-            case 7:
-                letter7++;
-            case 8:
-                letter8++;
+        if (el.length == 2) {
+            letter2++;
+        } else if (el.length == 3) {
+            letter3++;
+        } else if (el.length == 4) {
+            letter4++;
+        } else if (el.length == 5) {
+            letter5++;
+        } else if (el.length == 6) {
+            letter6++;
+        } else if (el.length == 7) {
+            letter7++;
+        } else if (el.length == 8) {
+            letter8++;
         }
     });
     document.getElementById("wordlengths").rows[1].cells[0].innerHTML = letter2;
