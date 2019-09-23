@@ -1,6 +1,6 @@
 var found = [];
 var notFound = [];
-    
+
 $(document).ready(function () {
     //Small animation
     $("#title").animate({ marginTop: "40px" }, 1500).
@@ -10,8 +10,8 @@ $(document).ready(function () {
     getScore();
     wordsLeft();
     //Focus input box and setup keylistener
-     document.getElementById("input").focus();
-     document.addEventListener("keyup", checkAns);
+    document.getElementById("input").focus();
+    document.addEventListener("keyup", checkAns);
 });
 
 function checkAns() {
@@ -23,12 +23,12 @@ function checkAns() {
         document.getElementById("input").value = "";
         document.getElementById("wordsfound").append(input + ' ');
         //Remove found value from notFound array
-        for (var j = notFound.length; j > 0 ; j--) {
+        for (var j = notFound.length; j > 0; j--) {
             if (notFound[j] == input) {
-                notFound.splice(j,  1);
+                notFound.splice(j, 1);
             }
         }
-    } 
+    }
     //Reset any input over 8 chars
     else if (input.length > 8) {
         document.getElementById("input").value = "";
@@ -62,13 +62,13 @@ function getRack() {
                         count++;
                     }
                 }
-                var e = jQuery.Event( "keydown", { keyCode: 64 } );
+                var e = jQuery.Event("keydown", { keyCode: 64 });
                 //Trigger an artificial keydown event with keyCode 64
-                $( "body" ).trigger( e );
+                $("body").trigger(e);
             }
         }
     })
-    
+
 }
 
 function getScore() {
