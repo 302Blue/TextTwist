@@ -93,11 +93,11 @@ function wordsLeft(el) {
             }
         }
     });
-    document.querySelector('#wordlengths').rows[1].cells[1].innerHTML = letter2;
-    document.querySelector('#wordlengths').rows[1].cells[2].innerHTML = letter3;
-    document.querySelector('#wordlengths').rows[1].cells[3].innerHTML = letter4;
-    document.querySelector('#wordlengths').rows[1].cells[4].innerHTML = letter5;
-    document.querySelector('#wordlengths').rows[1].cells[5].innerHTML = letter6;
-    document.querySelector('#wordlengths').rows[1].cells[6].innerHTML = letter7;
-    document.querySelector('#wordlengths').rows[1].cells[7].innerHTML = letter8;
+    document.querySelector('#wordlengths').rows[1].cells[0].innerHTML = letter2;
+    document.querySelector('#wordlengths').rows[1].cells[1].innerHTML = letter3;
+    document.querySelector('#wordlengths').rows[1].cells[2].innerHTML = letter4;
+    document.querySelector('#wordlengths').rows[1].cells[3].innerHTML = letter5;
+    document.querySelector('#wordlengths').rows[1].cells[4].innerHTML = letter6;
+    document.querySelector('#wordlengths').rows[1].cells[5].innerHTML = letter7;
+    document.querySelector('#wordlengths').rows[1].cells[6].innerHTML = letter8;
 }
