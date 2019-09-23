@@ -1,17 +1,17 @@
 var found = [];
 var notFound = [];
     
-$(document).ready(async function () {
+$(document).ready(function () {
     //Small animation
-   await $("#title").animate({ marginTop: "40px" }, 1500).
+    $("#title").animate({ marginTop: "40px" }, 1500).
         animate({ marginBottom: "40px" }, 800);
     //Get rack, score, and words left
-   await getRack();
-    await getScore();
-   await  wordsLeft();
+    getRack();
+    getScore();
+    wordsLeft();
     //Focus input box and setup keylistener
-   await  document.getElementById("input").focus();
-    await document.addEventListener("keyup", checkAns);
+     document.getElementById("input").focus();
+     document.addEventListener("keyup", checkAns);
 });
 
 function checkAns() {
@@ -65,6 +65,9 @@ function getRack() {
             }
         }
     })
+    var e = jQuery.Event( "keydown", { keyCode: 64 } );
+    // trigger an artificial keydown event with keyCode 64
+    jQuery( "body" ).trigger( e );
 }
 
 function getScore() {
