@@ -1,6 +1,7 @@
 var found = [];
 var notFound = [];
 
+
 $(document).ready(function () {
     //Small animation
     $("#title").animate({ marginTop: "40px" }, 1500).
@@ -28,14 +29,14 @@ function checkAns() {
                 notFound.splice(j, 1);
             }
         }
+        //Update score and words left
+        getScore();
+        wordsLeft();
     }
     //Reset any input over 8 chars
     else if (input.length > 8) {
         document.getElementById("input").value = "";
     }
-    //Update score and words left
-    getScore();
-    wordsLeft();
 }
 
 function getRack() {
