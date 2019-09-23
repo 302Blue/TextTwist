@@ -69,6 +69,7 @@ function wordsLeft() {
     let letter7 = 0;
     let letter8 = 0;
     notFound.forEach(function (el) {
+        console.log("THIS IS RUNNING");
         if (el.length == 2) {
             letter2++;
         } else if (el.length == 3) {
@@ -86,13 +87,6 @@ function wordsLeft() {
         }
     });
     document.getElementById("wordsleft").innerText = notFound.length - found.length;
-    document.getElementById("wordlengths").rows[1].cells[0].innerHTML = 0;
-    document.getElementById("wordlengths").rows[1].cells[1].innerHTML = 0;
-    document.getElementById("wordlengths").rows[1].cells[2].innerHTML = 0;
-    document.getElementById("wordlengths").rows[1].cells[3].innerHTML = 0;
-    document.getElementById("wordlengths").rows[1].cells[4].innerHTML = 0;
-    document.getElementById("wordlengths").rows[1].cells[5].innerHTML = 0;
-    document.getElementById("wordlengths").rows[1].cells[6].innerHTML = 0;
     document.getElementById("wordlengths").rows[1].cells[0].innerHTML = letter2;
     document.getElementById("wordlengths").rows[1].cells[1].innerHTML = letter3;
     document.getElementById("wordlengths").rows[1].cells[2].innerHTML = letter4;
