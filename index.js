@@ -8,8 +8,6 @@ $(document).ready(function () {
 
     document.getElementById("input").focus();
     document.addEventListener("keyup", checkAns);
-    console.log(notFound);
-    console.log(found);
     document.getElementById("wordsleft").innerText = notFound.length - found.length;
     getScore();
     wordsLeft();
@@ -52,6 +50,7 @@ function getRack() {
                         count++;
                     }
                 }
+                console.log(notFound);
             }
         }
     })
