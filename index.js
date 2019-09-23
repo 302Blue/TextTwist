@@ -7,23 +7,22 @@ $(document).ready(function () {
         animate({ marginBottom: "40px" }, 800);
 
     getRack();
-    getScore();
-    wordsLeft();
-    document.querySelector('#wordsleft').innerText = notFound.length - found.length;
     document.getElementById("input").focus();
     document.addEventListener("keyup", checkAns);
+    getScore();
+    wordsLeft();
 });
 
 function checkAns() {
-    var input = document.querySelector('#input').value.toUpperCase();
+    var input = document.getElementById("input").value.toUpperCase();
         if (notFound.includes(input) && !(found.includes(input))) {
-            document.querySelector('#wordsfound').append(input + ' ');
-            document.querySelector('#wordsleft').innerText = notFound.length - found.length;
-            document.querySelector('#input').value = "";
+            document.getElementById("wordsfound").append(input + ' ');
+            document.getElementById("wordsleft").innerText = notFound.length - found.length;
+            document.getElementById("input").value = "";
             found.push(input);
         } 
         else if (input.length > 8) {
-            document.querySelector('#input').value = "";
+            document.getElementById("input").value = "";
         }
         getScore();
         wordsLeft();
@@ -57,10 +56,11 @@ function getRack() {
 }
 
 function getScore() {
+    score = 0;
     found.forEach(function (el) {
         score += el.length;
     });
-    document.querySelector('#score').innerText = score;
+    document.getElementById("score").innerText = score;
 }
 
 function wordsLeft(el) {
@@ -89,11 +89,11 @@ function wordsLeft(el) {
                 letter8++;
         }
     });
-    document.querySelector('#wordlengths').rows[1].cells[0].innerHTML = letter2;
-    document.querySelector('#wordlengths').rows[1].cells[1].innerHTML = letter3;
-    document.querySelector('#wordlengths').rows[1].cells[2].innerHTML = letter4;
-    document.querySelector('#wordlengths').rows[1].cells[3].innerHTML = letter5;
-    document.querySelector('#wordlengths').rows[1].cells[4].innerHTML = letter6;
-    document.querySelector('#wordlengths').rows[1].cells[5].innerHTML = letter7;
-    document.querySelector('#wordlengths').rows[1].cells[6].innerHTML = letter8;
+    document.getElementById("wordlengths").rows[1].cells[0].innerHTML = letter2;
+    document.getElementById("wordlengths").rows[1].cells[1].innerHTML = letter3;
+    document.getElementById("wordlengths").rows[1].cells[2].innerHTML = letter4;
+    document.getElementById("wordlengths").rows[1].cells[3].innerHTML = letter5;
+    document.getElementById("wordlengths").rows[1].cells[4].innerHTML = letter6;
+    document.getElementById("wordlengths").rows[1].cells[5].innerHTML = letter7;
+    document.getElementById("wordlengths").rows[1].cells[6].innerHTML = letter8;
 }
