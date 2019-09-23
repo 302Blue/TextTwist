@@ -68,7 +68,25 @@ function wordsLeft() {
     let letter6 = 0;
     let letter7 = 0;
     let letter8 = 0;
-    notFound.forEach(function (el) {
+    for (var j = 0; j < notFound.length; j++) {
+        if (notFound[j].length == 2) {
+            letter2++;
+        } else if (notFound[j].length == 3) {
+            letter3++;
+        } else if (notFound[j].length == 4) {
+            letter4++;
+        } else if (notFound[j].length == 5) {
+            letter5++;
+        } else if (notFound[j].length == 6) {
+            letter6++;
+        } else if (notFound[j].length == 7) {
+            letter7++;
+        } else if (notFound[j].length == 8) {
+            letter8++;
+        }
+        console.log(notFound.length);
+    }
+    /* notFound.forEach(function (el) {
         if (el.length == 2) {
             letter2++;
         } else if (el.length == 3) {
@@ -84,10 +102,8 @@ function wordsLeft() {
         } else if (el.length == 8) {
             letter8++;
         }
-        console.log(el.length);
-    });
+    }); */
     document.getElementById("wordsleft").innerText = notFound.length - found.length;
-    console.log(notFound.length - found.length);
     document.getElementById("wordlengths").rows[1].cells[0].innerHTML = letter2;
     document.getElementById("wordlengths").rows[1].cells[1].innerHTML = letter3;
     document.getElementById("wordlengths").rows[1].cells[2].innerHTML = letter4;
