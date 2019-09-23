@@ -31,7 +31,7 @@ $(document).ready(function () {
 
 function getRack() {
     $.ajax({
-        url: "https://texttwist.paiza-user.cloud/~ubuntu/index.php",
+        url: "https://texttwist.paiza-user.cloud/~ubuntu/api.php",
         contentType: "application/json",
         type: "GET",
         statusCode: {
