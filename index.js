@@ -80,7 +80,7 @@ function getScore() {
     });
     //Add-on local score if it exists
     if (localScore != null) {
-        score += localScore;
+        score += parseInt(localScore);
     }
     //Update local score
     localStorage.setItem('twistScore', score);
