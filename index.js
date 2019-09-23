@@ -8,9 +8,6 @@ $(document).ready(function () {
 
     document.getElementById("input").focus();
     document.addEventListener("keyup", checkAns);
-    document.getElementById("wordsleft").innerText = notFound.length - found.length;
-    getScore();
-    wordsLeft();
 });
 
 function checkAns() {
@@ -19,7 +16,6 @@ function checkAns() {
             found.push(input);
             document.getElementById("input").value = "";
             document.getElementById("wordsfound").append(input + ' ');
-            document.getElementById("wordsleft").innerText = notFound.length - found.length;
         } 
         else if (input.length > 8) {
             document.getElementById("input").value = "";
@@ -50,10 +46,11 @@ function getRack() {
                         count++;
                     }
                 }
-                console.log(notFound);
             }
         }
     })
+    getScore();
+    wordsLeft();
 }
 
 function getScore() {
@@ -89,6 +86,7 @@ function wordsLeft() {
             letter8++;
         }
     });
+    document.getElementById("wordsleft").innerText = notFound.length - found.length;
     document.getElementById("wordlengths").rows[1].cells[0].innerHTML = letter2;
     document.getElementById("wordlengths").rows[1].cells[1].innerHTML = letter3;
     document.getElementById("wordlengths").rows[1].cells[2].innerHTML = letter4;
