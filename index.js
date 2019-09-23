@@ -53,6 +53,7 @@ function getRack() {
             }
         }
     })
+    found = [];
 }
 
 function getScore() {
@@ -63,7 +64,7 @@ function getScore() {
     document.getElementById("score").innerText = score;
 }
 
-function wordsLeft(el) {
+function wordsLeft() {
     let letter2 = 0;
     let letter3 = 0;
     let letter4 = 0;
@@ -87,6 +88,7 @@ function wordsLeft(el) {
         } else if (el.length == 8) {
             letter8++;
         }
+    });
     document.getElementById("wordlengths").rows[1].cells[0].innerHTML = letter2;
     document.getElementById("wordlengths").rows[1].cells[1].innerHTML = letter3;
     document.getElementById("wordlengths").rows[1].cells[2].innerHTML = letter4;
@@ -94,7 +96,4 @@ function wordsLeft(el) {
     document.getElementById("wordlengths").rows[1].cells[4].innerHTML = letter6;
     document.getElementById("wordlengths").rows[1].cells[5].innerHTML = letter7;
     document.getElementById("wordlengths").rows[1].cells[6].innerHTML = letter8;
-
-    });
-    
 }
