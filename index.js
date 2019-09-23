@@ -6,19 +6,20 @@ $(document).ready(function () {
         animate({ marginBottom: "40px" }, 800);
 
     getRack();
-    document.getElementById("input").focus();
-    document.addEventListener("keyup", checkAns);
     getScore();
     wordsLeft();
+    document.getElementById("input").focus();
+    document.addEventListener("keyup", checkAns);
+    document.getElementById("wordsleft").innerText = notFound.length - found.length;
 });
 
 function checkAns() {
     var input = document.getElementById("input").value.toUpperCase();
         if (notFound.includes(input) && !(found.includes(input))) {
+            found.push(input);
+            document.getElementById("input").value = "";
             document.getElementById("wordsfound").append(input + ' ');
             document.getElementById("wordsleft").innerText = notFound.length - found.length;
-            document.getElementById("input").value = "";
-            found.push(input);
         } 
         else if (input.length > 8) {
             document.getElementById("input").value = "";
