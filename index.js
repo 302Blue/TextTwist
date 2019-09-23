@@ -10,7 +10,7 @@ $(document).ready(function () {
     wordsLeft();
     document.querySelector('#wordsleft').innerText = notFound.length - found.length;
     document.getElementById("input").focus();
-    document.addEventListener("keyup", checkAns());
+    document.addEventListener("keyup", checkAns);
 });
 
 function checkAns() {
