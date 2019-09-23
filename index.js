@@ -63,7 +63,7 @@ function getRack() {
                     }
                 }
                 var e = jQuery.Event( "keydown", { keyCode: 64 } );
-                // trigger an artificial keydown event with keyCode 64
+                //Trigger an artificial keydown event with keyCode 64
                 $( "body" ).trigger( e );
             }
         }
@@ -77,7 +77,7 @@ function getScore() {
     found.forEach(function (el) {
         score += el.length;
     });
-    //Set html score
+    //Set score in html
     document.getElementById("score").innerText = score;
 }
 
