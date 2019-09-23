@@ -10,6 +10,7 @@ $(document).ready(function () {
     getRack();
     getLocal();
     wordsLeft();
+    updateScore();
     //Focus input box and setup keylistener
     document.getElementById("input").focus();
     document.addEventListener("keyup", checkAns);
