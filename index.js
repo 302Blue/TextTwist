@@ -87,11 +87,11 @@ function wordsLeft() {
         }
     });
     document.getElementById("wordsleft").innerText = notFound.length - found.length;
-    document.getElementById("wordlengths").rows[1].cells[0].innerHTML = letter2;
-    document.getElementById("wordlengths").rows[1].cells[1].innerHTML = letter3;
-    document.getElementById("wordlengths").rows[1].cells[2].innerHTML = letter4;
-    document.getElementById("wordlengths").rows[1].cells[3].innerHTML = letter5;
-    document.getElementById("wordlengths").rows[1].cells[4].innerHTML = letter6;
-    document.getElementById("wordlengths").rows[1].cells[5].innerHTML = letter7;
-    document.getElementById("wordlengths").rows[1].cells[6].innerHTML = letter8;
+    document.getElementById("wordlengths").rows[1].cells[0].innerText = letter2;
+    document.getElementById("wordlengths").rows[1].cells[1].innerText = letter3;
+    document.getElementById("wordlengths").rows[1].cells[2].innerText = letter4;
+    document.getElementById("wordlengths").rows[1].cells[3].innerText = letter5;
+    document.getElementById("wordlengths").rows[1].cells[4].innerText = letter6;
+    document.getElementById("wordlengths").rows[1].cells[5].innerText = letter7;
+    document.getElementById("wordlengths").rows[1].cells[6].innerText = letter8;
 }
