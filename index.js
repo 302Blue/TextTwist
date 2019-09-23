@@ -1,6 +1,3 @@
-var found = [];
-var notFound = [];
-
 $(document).ready(function () {
     $("#title").animate({ marginTop: "40px" }, 1500).
         animate({ marginBottom: "40px" }, 800);
@@ -25,6 +22,8 @@ function checkAns() {
 }
 
 function getRack() {
+    var found = [];
+    var notFound = [];
     $.ajax({
         url: "db/api.php",
         contentType: "application/json",
