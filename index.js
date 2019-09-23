@@ -25,8 +25,6 @@ function checkAns() {
 }
 
 function getRack() {
-    found = [];
-    notFound = [];
     $.ajax({
         url: "db/api.php",
         contentType: "application/json",
@@ -51,6 +49,7 @@ function getRack() {
             }
         }
     })
+    console.log(notFound);
     getScore();
     wordsLeft();
 }
@@ -64,6 +63,7 @@ function getScore() {
 }
 
 function wordsLeft() {
+    console.log(notFound);
     let letter2 = 0;
     let letter3 = 0;
     let letter4 = 0;
