@@ -6,7 +6,6 @@ $(document).ready(function () {
         animate({ marginBottom: "40px" }, 800);
     getRack();
 
-    found.push(input);
     document.getElementById("input").focus();
     document.addEventListener("keyup", checkAns);
     document.getElementById("wordsleft").innerText = notFound.length - found.length;
