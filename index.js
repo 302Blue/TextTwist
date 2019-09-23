@@ -1,14 +1,14 @@
+var score = 0;
 var found = [];
 var notFound = [];
-
 
 $(document).ready(function () {
     //Small animation
     $("#title").animate({ marginTop: "40px" }, 1500).
         animate({ marginBottom: "40px" }, 800);
-    //Get rack, score, and words left
+    //Get rack, local storage, and words left
     getRack();
-    getScore();
+    getLocal();
     wordsLeft();
     //Focus input box and setup keylistener
     document.getElementById("input").focus();
@@ -18,6 +18,7 @@ $(document).ready(function () {
 function checkAns() {
     //Force all input to uppercase for easy comparison
     var input = document.getElementById("input").value.toUpperCase();
+    //If answer is correct
     if (notFound.includes(input) && !(found.includes(input))) {
         //Add input to found array and reset input
         found.push(input);
@@ -30,7 +31,7 @@ function checkAns() {
             }
         }
         //Update score and words left
-        getScore();
+        updateScore();
         wordsLeft();
     }
     //Reset any input over 8 chars
@@ -72,21 +73,23 @@ function getRack() {
 
 }
 
-function getScore() {
-    let score = 0;
+function getLocal() {
     let localScore = localStorage.getItem('twistScore');
-    //Score by the length of the found word
+    //Set local score if it exists
+    if (localScore != null) {
+        score += parseInt(localScore);
+    }    
+}
+
+function updateScore() {
+    //Set score according to found words
     found.forEach(function (el) {
         score += el.length;
     });
-    //Add-on local score if it exists
-    if (localScore != null) {
-        score += parseInt(localScore, 10);
-    }
+    //Update the html element
+    document.getElementById("score").innerText = score;
     //Update local score
     localStorage.setItem('twistScore', score);
-    //Set score in html
-    document.getElementById("score").innerText = score;
 }
 
 function wordsLeft() {
