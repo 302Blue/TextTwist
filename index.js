@@ -72,8 +72,9 @@ function getRack() {
 }
 
 function getScore() {
+    let score;
     if (localStorage.getItem('twistScore') == "") {
-        let score = 0;
+        score = 0;
     } else {
         localStorage.setItem('twistScore', score);
     }
