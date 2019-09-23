@@ -16,6 +16,10 @@ body {
     font: bolder;
 }
 
+#score {
+    
+}
+
 #rack {
     text-align: justify;
     height: 2vh;
@@ -33,10 +37,6 @@ body {
     width: 25vw;
     resize: none;
     overflow-y: scroll;
-}
-
-#score {
-    
 }
 
 #wordsleft {
