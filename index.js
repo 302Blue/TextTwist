@@ -1,6 +1,5 @@
 var found = [];
 var notFound = [];
-var score = 0;
 
 $(document).ready(function () {
     $("#title").animate({ marginTop: "40px" }, 1500).
@@ -56,7 +55,7 @@ function getRack() {
 }
 
 function getScore() {
-    score = 0;
+    let score = 0;
     found.forEach(function (el) {
         score += el.length;
     });
