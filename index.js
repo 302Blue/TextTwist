@@ -64,13 +64,7 @@ function getScore() {
 }
 
 function wordsLeft(el) {
-    let letter2 = 0;
-    let letter3 = 0;
-    let letter4 = 0;
-    let letter5 = 0;
-    let letter6 = 0;
-    let letter7 = 0;
-    let letter8 = 0;
+    let letter2, letter3, letter4, letter5, letter6, letter7, letter8 = 0;
     notFound.forEach(function (el) {
         if (el.length == 2) {
             letter2++;
