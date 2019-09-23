@@ -40,10 +40,11 @@ body {
 }
 
 #wordsleft {
-    border: 1px solid black;
+    
 }
 
 #wordlengths {
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid black;
 }
