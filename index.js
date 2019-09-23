@@ -10,10 +10,10 @@ $(document).ready(function () {
     getRack();
     getLocal();
     wordsLeft();
-    updateScore();
-    //Focus input box and setup keylistener
+    //Focus input box and setup keylistener and score
     document.getElementById("input").focus();
     document.addEventListener("keyup", checkAns);
+    document.getElementById("score").innerText = score;
 });
 
 function checkAns() {
