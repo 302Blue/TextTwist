@@ -72,7 +72,11 @@ function getRack() {
 }
 
 function getScore() {
-    let score = 0;
+    if (localStorage.getItem('twistScore') == "") {
+        let score = 0;
+    } else {
+        localStorage.setItem('twistScore', score);
+    }
     //Score by the length of the found word
     found.forEach(function (el) {
         score += el.length;
