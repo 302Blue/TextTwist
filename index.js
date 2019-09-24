@@ -89,13 +89,6 @@ function getScore() {
     localStorage.setItem('twistScore', score);
 }
 
-function updateScore() {
-    //Set score according to found words
-
-
-
-}
-
 function wordsLeft() {
     let letter2 = 0;
     let letter3 = 0;
