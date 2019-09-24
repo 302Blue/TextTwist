@@ -7,16 +7,15 @@ $(document).ready(function () {
     //Small animation
     $("#title").animate({ marginTop: "40px" }, 1500).
         animate({ marginBottom: "40px" }, 800);
-    //Get rack, score, and words left
-    getRack();
-    getScore();
-    wordsLeft();
     //Get stored score if it exists
     oldScore = localStorage.getItem('twistScore');
     //Focus input box and setup keylistener and score
     document.getElementById("input").focus();
     document.addEventListener("keyup", checkAns);
-    document.getElementById("score").innerText = score;
+    //Get rack, score, and words left
+    getRack();
+    getScore();
+    wordsLeft();
 });
 
 function checkAns() {
@@ -85,7 +84,7 @@ function getScore() {
     });
     //Add-in old score if it existed
     if (oldScore != null) {
-        score += parseInt(oldScore, 10);
+        score += parseInt(oldScore);
     }
     //Update the html element
     document.getElementById("score").innerText = score;
