@@ -33,6 +33,10 @@ body {
     overflow-y: scroll;
 }
 
+.texts {
+    color: #fefefe;
+}
+
 #wordlengths {
     margin-left: auto;
     margin-right: auto;
@@ -48,11 +52,6 @@ body {
     padding: 5px;
 }
 
-.texts {
-  color: #fefefe;
-}
-
-
 .logo {
   font: 100px 'Arial Narrow', sans-serif;/* I picked this font because it's the closest looking 'web safe' font http://cssfontstack.com/ */
   color: #fefefe;
@@ -60,7 +59,7 @@ body {
   letter-spacing: -4px;
 }
 
-/* stuff for both words */
+/* stuff for both words */ 
 .logo span {
   position: relative;
 }
