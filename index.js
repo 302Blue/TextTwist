@@ -10,7 +10,7 @@ $(document).ready(function () {
     //Get stored score if it exists
     oldScore = localStorage.getItem('twistScore');
     //Focus input box and setup keylistener and score
-    document.getElementById("input").focus();
+    document.getElementById('input').focus();
     document.addEventListener("keyup", checkAns);
     //Get rack, score, and words left
     getRack();
@@ -20,13 +20,13 @@ $(document).ready(function () {
 
 function checkAns() {
     //Force all input to uppercase for easy comparison
-    var input = document.getElementById("input").value.toUpperCase();
+    var input = document.getElementById('input').value.toUpperCase();
     //If answer is correct
     if (notFound.includes(input) && !(found.includes(input))) {
         //Add input to found array and reset input
         found.push(input);
-        document.getElementById("input").value = "";
-        document.getElementById("wordsfound").append(input + ' ');
+        document.getElementById('input').value = "";
+        document.getElementById('wordsfound').append(input + ' ');
         //Remove found value from notFound array
         for (var j = notFound.length; j > 0; j--) {
             if (notFound[j] == input) {
@@ -36,7 +36,7 @@ function checkAns() {
     }
     //Reset any input over 8 chars
     else if (input.length > 8) {
-        document.getElementById("input").value = "";
+        document.getElementById('input').value = "";
     }
     //Update score and words left
     getScore();
@@ -84,7 +84,7 @@ function getScore() {
         score += parseInt(oldScore);
     }
     //Update the html element
-    document.getElementById("score").innerText = score;
+    document.getElementById('score').innerText = score;
     //Update local score
     localStorage.setItem('twistScore', score);
 }
@@ -124,11 +124,11 @@ function wordsLeft() {
     });
     //Set number of words left and set their lengths in html
     document.querySelector("#wordsleft").innerText = notFound.length;
-    document.getElementById("wordlengths").rows[1].cells[0].innerHTML = letter2;
-    document.getElementById("wordlengths").rows[1].cells[1].innerHTML = letter3;
-    document.getElementById("wordlengths").rows[1].cells[2].innerHTML = letter4;
-    document.getElementById("wordlengths").rows[1].cells[3].innerHTML = letter5;
-    document.getElementById("wordlengths").rows[1].cells[4].innerHTML = letter6;
-    document.getElementById("wordlengths").rows[1].cells[5].innerHTML = letter7;
-    document.getElementById("wordlengths").rows[1].cells[6].innerHTML = letter8;
+    document.getElementById('wordlengths').rows[1].cells[0].innerHTML = letter2;
+    document.getElementById('wordlengths').rows[1].cells[1].innerHTML = letter3;
+    document.getElementById('wordlengths').rows[1].cells[2].innerHTML = letter4;
+    document.getElementById('wordlengths').rows[1].cells[3].innerHTML = letter5;
+    document.getElementById('wordlengths').rows[1].cells[4].innerHTML = letter6;
+    document.getElementById('wordlengths').rows[1].cells[5].innerHTML = letter7;
+    document.getElementById('wordlengths').rows[1].cells[6].innerHTML = letter8;
 }
