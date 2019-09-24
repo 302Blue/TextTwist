@@ -3,8 +3,8 @@ var notFound = [];
 
 $(document).ready(function () {
     //Small animation
-    $("#title").animate({ marginTop: "40px" }, 1500).
-        animate({ marginBottom: "40px" }, 800);
+    $(".logo").animate({ marginTop: "40px" }, 700).
+        animate({ marginBottom: "40px" }, 400);
     //Get rack, score, and words left
     getRack();
     getScore();
