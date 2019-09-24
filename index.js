@@ -91,9 +91,9 @@ function getScore() {
 
 function updateScore() {
     //Set score according to found words
-    
-    
-    
+
+
+
 }
 
 function wordsLeft() {
