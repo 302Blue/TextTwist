@@ -67,9 +67,6 @@ function getRack() {
                         count++;
                     }
                 }
-                var e = jQuery.Event("keydown", { keyCode: 64 });
-                //Trigger an artificial keydown event with keyCode 64
-                $("body").trigger(e);
             }
         }
     })
@@ -94,9 +91,9 @@ function getScore() {
 
 function updateScore() {
     //Set score according to found words
-    
-    
-    
+
+
+
 }
 
 function wordsLeft() {
