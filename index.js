@@ -4,7 +4,7 @@ var found = [];
 var notFound = [];
 
 $(document).ready(function () {
-    //Small animation
+    //Small animation 
     $(".logo").animate({ marginTop: "40px" }, 1500).
         animate({ marginBottom: "40px" }, 800);
     //Get stored score if it exists

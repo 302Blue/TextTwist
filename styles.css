@@ -91,7 +91,7 @@ body {
   margin-right: -38px;
   transform: rotateY(180deg);/* using Prefix free */
   display: inline-block;/* required for transform */
-  z-index: 10;/* stack 1st word on top */
+  z-index: 10;/* stack 1st word on top */ 
 }
 .logo .word1:before {
   right: -4px;/* would be left, but we flipped the word */
