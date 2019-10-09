@@ -36,7 +36,7 @@
     $subRacks = array_unique($subRacks);
     
     //Push the subracks into a new array with just the values
-    $allRacks=array();
+    $allRacks = array();
     foreach ($subRacks as $key => $value) {
         array_push($allRacks,"$value");
     }

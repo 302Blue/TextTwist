@@ -2,6 +2,7 @@ var score = 0;
 var oldScore = 0;
 var found = [];
 var notFound = [];
+var notFoundLen = 0;
 
 $(document).ready(function () {
     //Small animation  
@@ -26,13 +27,18 @@ function checkAns() {
         //Add input to found array and reset input
         found.push(input);
         document.getElementById('input').value = "";
-        document.getElementById('wordsfound').append(input + ' ');
+        document.getElementById('wordsfound').value = found;
         //Remove found value from notFound array
         for (var j = notFound.length; j > 0; j--) {
             if (notFound[j] == input) {
                 notFound.splice(j, 1);
             }
         }
+    }
+    //Win state
+    if ((notFound.length < 1) && (found.length == notFoundLen)) {
+        document.getElementById('wordsfound').innerHTML = 
+            "YOU WIN!! \n Refresh page to continue playing.";
     }
     //Reset any input over 8 chars
     else if (input.length > 8) {
@@ -67,6 +73,7 @@ function getRack() {
                         count++;
                     }
                 }
+                notFoundLen = notFound.length;
             }
         }
     })
