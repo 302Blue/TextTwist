@@ -21,7 +21,7 @@ $(document).ready(function () {
 
 function checkAns() {
     //Force all input to uppercase for easy comparison
-    var input = document.getElementById('input').value.toUpperCase();
+    let input = document.getElementById('input').value.toUpperCase();
     //If answer is correct
     if (notFound.includes(input) && !(found.includes(input))) {
         //Add input to found array and reset input
@@ -29,9 +29,9 @@ function checkAns() {
         document.getElementById('input').value = "";
         document.getElementById('wordsfound').value = found;
         //Remove found value from notFound array
-        for (var j = notFound.length; j > 0; j--) {
-            if (notFound[j] == input) {
-                notFound.splice(j, 1);
+        for (let i = notFound.length; i > 0; i--) {
+            if (notFound[i] == input) {
+                notFound.splice(i, 1);
             }
         }
     }
@@ -56,13 +56,13 @@ function getRack() {
         type: "GET",
         statusCode: {
             200: function (response) {
-                var count = 0;
+                let count = 0;
                 //Get rack value
                 $('#rack').append(response[0]);
                 //Get all of the word values and add to the notFound array
-                for (var i = 0; i < response[1].length; i++) {
+                for (let i = 0; i < response[1].length; i++) {
                     if (response[1][i].words.includes("@@")) {
-                        var splitWords = response[1][i].words.split('@@')
+                        let splitWords = response[1][i].words.split('@@')
                         splitWords.forEach(function (el) {
                             notFound[count] = el;
                             count++;
